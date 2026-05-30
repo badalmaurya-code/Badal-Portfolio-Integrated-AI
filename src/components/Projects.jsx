@@ -124,7 +124,7 @@ function ProjectCard({ emoji, gradient, badge, title, description, stack, github
 
 export default function Projects() {
   return (
-    <section id="projects" style={{ padding: "5rem 2.5rem" }}>
+    <section id="projects" style={{ padding: "clamp(3rem, 5vw, 5rem) clamp(1.25rem, 5vw, 2.5rem)" }}>
       <div
         style={{
           fontFamily: "var(--mono)",

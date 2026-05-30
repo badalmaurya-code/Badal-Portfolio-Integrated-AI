@@ -3,9 +3,9 @@ export default function Footer() {
     <footer
       style={{
         textAlign: "center",
-        padding: "2rem 2.5rem",
+        padding: "clamp(1.5rem, 3vw, 2rem) clamp(1rem, 5vw, 2.5rem)",
         borderTop: "1px solid var(--border)",
-        fontSize: "0.8rem",
+        fontSize: "clamp(0.7rem, 2vw, 0.8rem)",
         color: "var(--text3)",
         fontFamily: "var(--mono)",
       }}

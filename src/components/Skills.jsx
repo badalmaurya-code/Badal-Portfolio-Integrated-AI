@@ -67,7 +67,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      style={{ padding: "5rem 2.5rem", background: "var(--bg2)" }}
+      style={{ padding: "clamp(3rem, 5vw, 5rem) clamp(1.25rem, 5vw, 2.5rem)", background: "var(--bg2)" }}
     >
       <div
         style={{

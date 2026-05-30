@@ -3,6 +3,7 @@ import { useChat } from "../hooks/useChat";
 
 const QUICK_ASKS = [
   "What are Badal's top skills?",
+  "What are Badal's Productive & AI Tools skills?",
   "Tell me about his projects",
   "What is his education background?",
   "Is he available for hire?",
@@ -69,12 +70,13 @@ function Message({ role, content }) {
         style={{
           padding: "0.75rem 1rem",
           borderRadius: 16,
-          fontSize: "0.85rem",
+          fontSize: "clamp(0.8rem, 2vw, 0.85rem)",
           lineHeight: 1.6,
-          maxWidth: "80%",
+          maxWidth: "85%",
           background: isUser ? "var(--accent)" : "var(--bg3)",
           color: isUser ? "#fff" : "var(--text2)",
           border: isUser ? "none" : "1px solid var(--border)",
+          wordWrap: "break-word",
         }}
       >
         {content}
@@ -99,7 +101,7 @@ export default function AIChat() {
   };
 
   return (
-    <section id="ai" style={{ padding: "5rem 2.5rem", background: "var(--bg2)" }}>
+    <section id="ai" style={{ padding: "clamp(3rem, 5vw, 5rem) clamp(1.25rem, 5vw, 2.5rem)", background: "var(--bg2)" }}>
       <div
         style={{
           fontFamily: "var(--mono)",
@@ -117,7 +119,7 @@ export default function AIChat() {
         style={{
           fontFamily: "var(--font)",
           fontWeight: 700,
-          fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+          fontSize: "clamp(1.8rem, 5vw, 2.8rem)",
           letterSpacing: "-0.02em",
           marginBottom: "0.5rem",
           textAlign: "center",
@@ -125,8 +127,8 @@ export default function AIChat() {
       >
         Ask About Me
       </h2>
-      <p style={{ textAlign: "center", color: "var(--text2)", fontSize: "0.9rem", marginBottom: "2.5rem" }}>
-        Powered by Claude AI — ask anything about my skills, projects, or background.
+      <p style={{ textAlign: "center", color: "var(--text2)", fontSize: "clamp(0.85rem, 2vw, 0.9rem)", marginBottom: "2.5rem" }}>
+        Powered by Badal Maurya — ask anything about my skills, projects, or background.
       </p>
 
       {/* Chat box */}
@@ -136,18 +138,22 @@ export default function AIChat() {
           margin: "0 auto",
           background: "var(--card)",
           border: "1px solid var(--border)",
-          borderRadius: 24,
+          borderRadius: "clamp(12px, 4vw, 24px)",
           overflow: "hidden",
+          display: "flex",
+          flexDirection: "column",
+          height: "clamp(400px, 70vh, 600px)",
         }}
       >
         {/* Header */}
         <div
           style={{
-            padding: "1rem 1.5rem",
+            padding: "1rem",
             borderBottom: "1px solid var(--border)",
             display: "flex",
             alignItems: "center",
             gap: "0.75rem",
+            flexShrink: 0,
           }}
         >
           <div
@@ -167,7 +173,7 @@ export default function AIChat() {
             B
           </div>
           <div>
-            <div style={{ fontFamily: "var(--font)", fontWeight: 600, fontSize: "0.9rem" }}>
+            <div style={{ fontFamily: "var(--font)", fontWeight: 600, fontSize: "clamp(0.85rem, 2vw, 0.9rem)" }}>
               Badal's AI Assistant
             </div>
             <div style={{ fontSize: "0.75rem", color: "var(--green)", display: "flex", alignItems: "center", gap: "0.3rem" }}>
@@ -180,13 +186,12 @@ export default function AIChat() {
         {/* Messages */}
         <div
           style={{
-            padding: "1.5rem",
-            minHeight: 220,
-            maxHeight: 320,
+            padding: "1rem",
             overflowY: "auto",
             display: "flex",
             flexDirection: "column",
             gap: "1rem",
+            flex: 1,
           }}
         >
           {messages.map((m, i) => (
@@ -229,10 +234,13 @@ export default function AIChat() {
         {/* Quick ask chips */}
         <div
           style={{
-            padding: "0 1.5rem 1rem",
+            padding: "0.75rem",
             display: "flex",
             flexWrap: "wrap",
             gap: "0.5rem",
+            overflowX: "auto",
+            flexShrink: 0,
+            borderTop: "1px solid var(--border)",
           }}
         >
           {QUICK_ASKS.map((q) => (
@@ -243,12 +251,14 @@ export default function AIChat() {
                 background: "var(--bg3)",
                 border: "1px solid var(--border)",
                 color: "var(--text2)",
-                padding: "0.35rem 0.85rem",
+                padding: "0.35rem 0.75rem",
                 borderRadius: "100px",
-                fontSize: "0.78rem",
+                fontSize: "0.7rem",
                 cursor: "pointer",
                 transition: "all 0.2s",
                 fontFamily: "var(--body)",
+                whiteSpace: "nowrap",
+                flexShrink: 0,
               }}
               onMouseEnter={(e) => {
                 e.target.style.borderColor = "var(--accent)";
@@ -267,18 +277,20 @@ export default function AIChat() {
         {/* Input row */}
         <div
           style={{
-            padding: "1rem 1.5rem",
+            padding: "1rem",
             borderTop: "1px solid var(--border)",
             display: "flex",
             gap: "0.75rem",
             alignItems: "center",
+            flexShrink: 0,
+            backgroundColor: "var(--card)",
           }}
         >
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
-            placeholder="Ask something about Badal..."
+            placeholder="Ask something..."
             style={{
               flex: 1,
               background: "var(--bg3)",
@@ -287,8 +299,9 @@ export default function AIChat() {
               padding: "0.65rem 1rem",
               color: "var(--text)",
               fontFamily: "var(--body)",
-              fontSize: "0.875rem",
+              fontSize: "clamp(0.8rem, 2vw, 0.875rem)",
               outline: "none",
+              minHeight: "44px",
             }}
             onFocus={(e) => (e.target.style.borderColor = "var(--accent)")}
             onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
@@ -300,8 +313,8 @@ export default function AIChat() {
               background: loading ? "var(--text3)" : "var(--accent)",
               border: "none",
               borderRadius: 10,
-              width: 38,
-              height: 38,
+              width: 44,
+              height: 44,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",

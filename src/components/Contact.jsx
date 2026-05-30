@@ -13,7 +13,7 @@ export default function Contact() {
     <section
       id="contact"
       style={{
-        padding: "5rem 2.5rem",
+        padding: "clamp(3rem, 5vw, 5rem) clamp(1.25rem, 5vw, 2.5rem)",
         background: "var(--bg2)",
         textAlign: "center",
       }}

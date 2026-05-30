@@ -29,6 +29,8 @@
 
 html {
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -36,6 +38,13 @@ body {
   color: var(--text);
   font-family: var(--body);
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+main {
+  padding-top: 60px;
 }
 
 /* Scrollbar */
@@ -83,3 +92,159 @@ body {
 }
 .typing-dot:nth-child(2) { animation-delay: 0.2s; }
 .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* Main element responsive padding */
+@media (max-width: 768px) {
+  main {
+    padding-top: 55px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding-top: 50px;
+  }
+}
+
+/* ──── MOBILE RESPONSIVENESS ──── */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  /* Remove orbs on mobile */
+  .orb-1, .orb-2 {
+    opacity: 0.06 !important;
+    filter: blur(60px) !important;
+  }
+
+  /* Adjust padding for mobile */
+  nav {
+    padding: 0.75rem 1rem !important;
+  }
+
+  section {
+    padding: 3rem 1.25rem !important;
+  }
+
+  #hero {
+    padding-top: 2rem !important;
+  }
+
+  /* Hero section adjustments */
+  h1 {
+    font-size: clamp(2rem, 5vw, 2.5rem) !important;
+  }
+
+  h2 {
+    font-size: clamp(1.4rem, 4vw, 2rem) !important;
+  }
+
+  /* Grids - 1 or 2 columns on mobile */
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Touch-friendly button sizes */
+  button, a[role="button"] {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+
+  /* Input fields mobile-friendly */
+  input, textarea {
+    font-size: 16px !important;
+    min-height: 44px !important;
+  }
+
+  /* Stats stack vertically */
+  .hero-stats {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Contact links stack */
+  .contact-links {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+
+  .contact-link {
+    width: 100% !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Education timeline */
+  .edu-item {
+    flex-direction: column !important;
+  }
+
+  .edu-icon {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0.75rem 0.75rem !important;
+  }
+
+  section {
+    padding: 2.5rem 1rem !important;
+  }
+
+  #hero {
+    padding-top: 1.5rem !important;
+  }
+
+  h1 {
+    font-size: clamp(1.75rem, 5vw, 2.2rem) !important;
+  }
+
+  h2 {
+    font-size: clamp(1.2rem, 4vw, 1.8rem) !important;
+  }
+
+  .hero-actions {
+    flex-direction: column !important;
+  }
+
+  .btn-primary, .btn-ghost {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .skill-card {
+    padding: 1rem !important;
+  }
+
+  .project-thumb {
+    height: 120px !important;
+    font-size: 2rem !important;
+  }
+
+  .project-card {
+    border-radius: 16px !important;
+  }
+
+  /* Stat labels on mobile */
+  .stat-num {
+    font-size: 1.5rem !important;
+  }
+
+  .stat-label {
+    font-size: 0.7rem !important;
+  }
+
+  /* Chat widget adjustments */
+  #ai {
+    padding: 2rem 1rem !important;
+  }
+}

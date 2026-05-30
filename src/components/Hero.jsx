@@ -5,11 +5,11 @@ export default function Hero() {
     <section
       id="hero"
       style={{
-        minHeight: "100vh",
+        // minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        padding: "7rem 2.5rem 4rem",
+        padding: "clamp(5rem, 10vw, 7rem) clamp(1.25rem, 5vw, 2.5rem) clamp(2rem, 5vw, 4rem)",
         position: "relative",
         overflow: "hidden",
       }}
@@ -114,19 +114,23 @@ export default function Hero() {
       </p>
 
       {/* CTA buttons */}
-      <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+      <div style={{ display: "flex", gap: "clamp(0.75rem, 2vw, 1rem)", flexWrap: "wrap" }}>
         <a
           href="#projects"
           style={{
             background: "var(--accent)",
             color: "#fff",
-            padding: "0.75rem 1.8rem",
+            padding: "clamp(0.6rem, 1.5vw, 0.75rem) clamp(1.2rem, 3vw, 1.8rem)",
             borderRadius: "100px",
             fontWeight: 600,
-            fontSize: "0.9rem",
+            fontSize: "clamp(0.8rem, 2vw, 0.9rem)",
             textDecoration: "none",
             boxShadow: "0 0 30px rgba(124,106,255,0.35)",
             transition: "transform 0.2s, box-shadow 0.2s",
+            minHeight: "44px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
           onMouseEnter={(e) => {
             e.target.style.transform = "translateY(-2px)";
@@ -144,12 +148,16 @@ export default function Hero() {
           style={{
             border: "1px solid var(--border2)",
             color: "var(--text2)",
-            padding: "0.75rem 1.8rem",
+            padding: "clamp(0.6rem, 1.5vw, 0.75rem) clamp(1.2rem, 3vw, 1.8rem)",
             borderRadius: "100px",
             fontWeight: 500,
-            fontSize: "0.9rem",
+            fontSize: "clamp(0.8rem, 2vw, 0.9rem)",
             textDecoration: "none",
             transition: "border-color 0.2s, color 0.2s",
+            minHeight: "44px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
           onMouseEnter={(e) => {
             e.target.style.borderColor = "var(--accent2)";
@@ -168,19 +176,21 @@ export default function Hero() {
       <div
         style={{
           display: "flex",
-          gap: "3rem",
-          marginTop: "4rem",
-          paddingTop: "2rem",
+          flexWrap: "wrap",
+          gap: "clamp(2rem, 5vw, 3rem)",
+          marginTop: "clamp(5rem, 5vw, 4rem)",
+          paddingTop: "clamp(1rem, 3vw, 2rem)",
           borderTop: "1px solid var(--border)",
+          justifyContent: "space-around",
         }}
       >
         {stats.map((s) => (
-          <div key={s.label}>
+          <div key={s.label} style={{ minWidth: "clamp(80px, 25vw, 150px)" }}>
             <span
               style={{
                 fontFamily: "var(--font)",
                 fontWeight: 800,
-                fontSize: "2rem",
+                fontSize: "clamp(1.5rem, 4vw, 2rem)",
                 color: "var(--text)",
                 display: "block",
               }}
@@ -189,12 +199,13 @@ export default function Hero() {
             </span>
             <span
               style={{
-                fontSize: "0.8rem",
+                fontSize: "clamp(0.65rem, 2vw, 0.8rem)",
                 color: "var(--text3)",
                 letterSpacing: "0.04em",
                 textTransform: "uppercase",
                 marginTop: "0.2rem",
                 display: "block",
+                lineHeight: 1.3,
               }}
             >
               {s.label}

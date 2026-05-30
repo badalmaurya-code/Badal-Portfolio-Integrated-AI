@@ -1,3 +1,6 @@
+// ─── Resume Data ────────────────────────────────────────────
+// Edit this file to update your portfolio content
+
 export const personal = {
   name: "Badal Maurya",
   role: "Frontend Developer",
@@ -11,7 +14,7 @@ export const personal = {
 };
 
 export const stats = [
-  { num: "3+", label: "Projects Shipped" },
+  { num: "5+", label: "Projects Shipped" },
   { num: "MERN", label: "Full Stack" },
   { num: "74.5%", label: "Diploma Score" },
 ];
@@ -109,7 +112,7 @@ export const education = [
   },
 ];
 
-
+// AI context sent to Claude API
 export const AI_CONTEXT = `
 You are Badal Maurya's personal AI portfolio assistant. Be friendly, concise, and professional.
 Answer ONLY based on his resume. Keep replies to 2–4 sentences. Use minimal emoji.
@@ -128,6 +131,7 @@ Skills:
 - UI/Design: Tailwind CSS, Responsive Web Design
 - Databases & Tools: MongoDB, Git, GitHub
 - API work: RESTful APIs, async JS, JSON manipulation
+- Productivity & AI Tools: ChatGPT, Claude AI, Codex AI, Canva
 
 Projects:
 1. Groceries E-Commerce (React.js) — responsive, persistent cart, Tailwind CSS

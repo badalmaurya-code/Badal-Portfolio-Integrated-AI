@@ -3,7 +3,7 @@ import { education } from "../data/resume";
 
 export default function Education() {
   return (
-    <section id="education" style={{ padding: "5rem 2.5rem" }}>
+    <section id="education" style={{ padding: "clamp(3rem, 5vw, 5rem) clamp(1.25rem, 5vw, 2.5rem)" }}>
       <div
         style={{
           fontFamily: "var(--mono)",
