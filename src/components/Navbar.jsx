@@ -96,6 +96,12 @@ export default function Navbar() {
             <li key={id}>
               <a
                 href={`#${id}`}
+                onClick={(e) => {
+                  if (id === "ai") {
+                    e.preventDefault();
+                    window.dispatchEvent(new CustomEvent("open-ai-chat"));
+                  }
+                }}
                 style={{
                   color: "var(--text2)",
                   textDecoration: "none",
@@ -144,7 +150,7 @@ export default function Navbar() {
             background: "none",
             border: "none",
             cursor: "pointer",
-            padding: 0,
+            padding: 12,
             zIndex: 101,
           }}
         >

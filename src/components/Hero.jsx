@@ -144,7 +144,8 @@ export default function Hero() {
           View Projects
         </a>
         <a
-          href="#ai"
+          href="/Badal_Maurya_CV.pdf"
+          download="Badal_Maurya_CV.pdf"
           style={{
             border: "1px solid var(--border2)",
             color: "var(--text2)",
@@ -168,7 +169,7 @@ export default function Hero() {
             e.target.style.color = "var(--text2)";
           }}
         >
-          Ask AI About Me
+          Download CV
         </a>
       </div>
 

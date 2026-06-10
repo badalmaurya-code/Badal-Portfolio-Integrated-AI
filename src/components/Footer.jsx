@@ -10,7 +10,7 @@ export default function Footer() {
         fontFamily: "var(--mono)",
       }}
     >
-      Built with ❤️ by Badal Maurya · React.js · Tailwind CSS · AI-Powered
+      Built with ❤️ by Badal Maurya · React.js · Tailwind CSS · API
     </footer>
   );
 }

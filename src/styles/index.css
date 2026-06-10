@@ -52,6 +52,15 @@ main {
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
 
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Animations */
 @keyframes drift1 {
   0%, 100% { transform: translate(0, 0); }
