@@ -87,7 +87,7 @@ export default function Hero() {
           marginBottom: "0.3rem",
         }}
       >
-        Frontend
+        DevOps &
         <span
           style={{
             display: "block",
@@ -97,7 +97,7 @@ export default function Hero() {
             backgroundClip: "text",
           }}
         >
-          Developer.
+          Cloud Engineer.
         </span>
       </h1>
 

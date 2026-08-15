@@ -50,7 +50,7 @@ export default function Contact() {
           margin: "0 auto",
         }}
       >
-        Open to frontend roles, internships, and exciting projects. Drop a message and let's connect!
+        Open to DevOps Engineer, Cloud Engineering roles, jobs and internships. Drop a message and let's connect!
       </p>
 
       <div
